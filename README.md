@@ -143,6 +143,37 @@ Voici un exemple simple illustrant l'utilisation de reduce() pour calculer la so
       console.log(sum); // Affiche : 15
 
 
+
+## FILTER METHOD IN JAVASCRIPT
+
+
+La méthode filter() en JavaScript est utilisée pour créer un nouveau tableau contenant uniquement les éléments d'un tableau d'origine qui satisfont à une condition spécifique définie dans une fonction de rappel. Cette méthode est particulièrement utile lorsque vous avez besoin de filtrer un ensemble de données en fonction de certains critères.
+
+Voici quelques raisons courantes d'utiliser la méthode filter() :
+
+1. Filtrage de données : Vous pouvez utiliser filter() pour extraire des éléments d'un tableau qui répondent à des critères spécifiques. Par exemple, vous pouvez filtrer les nombres pairs ou impairs, les éléments supérieurs à une certaine valeur, les chaînes de caractères qui commencent par une lettre particulière, etc.
+
+2. Création de sous-ensembles de données : La méthode filter() vous permet de créer rapidement des sous-ensembles de données à partir d'un tableau d'origine. Cela peut être utile lorsque vous avez besoin de travailler uniquement avec une partie spécifique des données.
+
+3. Code plus lisible et concis : Utiliser filter() peut rendre votre code plus lisible et concis, car il permet de spécifier la condition de filtrage de manière déclarative, sans nécessiter de boucles explicites.
+
+4. Réduction des effets secondaires : L'utilisation de filter() peut contribuer à réduire les effets secondaires dans votre code, car elle crée un nouveau tableau plutôt que de modifier directement le tableau d'origine.
+
+Voici un exemple simple illustrant l'utilisation de filter() pour filtrer les nombres pairs à partir d'un tableau :
+
+
+      const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+      const evenNumbers = numbers.filter((number) => {
+      return number % 2 === 0;
+      });
+
+      console.log(evenNumbers); // Affiche : [2, 4, 6, 8, 10]
+
+
+Dans cet exemple, la fonction de rappel passe en revue chaque élément du tableau numbers et renvoie true si l'élément est pair (c'est-à-dire s'il a un reste de 0 lorsqu'il est divisé par 2). La méthode filter() crée ensuite un nouveau tableau contenant uniquement les éléments pour lesquels la fonction de rappel retourne true.
+
+
 ## 
 
-Copyright BIRUSHA Francoise RADJABU Prosper 2024
+Copyright BIRUSHA Francoise RADJABU Prosper 2024, Inc. Team       Privacy
