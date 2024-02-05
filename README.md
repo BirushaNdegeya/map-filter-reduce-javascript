@@ -67,3 +67,57 @@ Ce code nous la racine carre de chaque element d'un tableau
       // ]
 
 # Utiliser parseInt() avec map()
+
+Il est courant d'utiliser le rappel avec un argument (l'élément en cours de parcours). Certaines fonctions sont également couramment utilisées avec un seul argument, même si elles prennent des arguments optionnels supplémentaires. Ces habitudes peuvent entraîner des comportements confus. Considérez :
+
+      ["1", "2", "3"].map(parseInt);
+
+Pour resoudre ce probleme et transformer les elements en int
+
+      ["1", "2", "3"].map((str) => parseInt(str, 10)); // [1, 2, 3]
+
+      console.log(["1", "2", "3"].map(Number));
+
+      // Il convertit les elements du tableau en integer
+
+
+# Parcourrer un tableau qui contient les undefined
+
+      const numbers = [1, 2, 3, 4];
+      const filteredNumbers = numbers.map((num, index) => {
+      if (index < 3) {
+      return num;
+      }
+      });
+
+      // index goes from 0, so the filterNumbers are 1,2,3 and undefined.
+      // filteredNumbers is [1, 2, 3, undefined]
+      // numbers is still [1, 2, 3, 4]
+
+# Side-effectful mapping
+
+Le call back de side effect pour un variable
+
+      const cart = [5, 15, 25];
+      let total = 0;
+      const withTax = cart.map((cost) => {
+      total += cost;
+      return cost * 1.2;
+      });
+      console.log(withTax); // [6, 18, 30]
+      console.log(total); // 45
+
+Le moyen performant de faire ce genre d'operation c'est utiliser le reduce methode pour eviter de faire un boucle deux fois
+
+      const cart = [5, 15, 25];
+      const total = cart.reduce((acc, cost) => acc + cost, 0);
+      const withTax = cart.map((cost) => cost * 1.2);
+
+      console.log(total);
+      console.log(withTax);
+
+
+
+## 
+
+Copyright BIRUSHA 2024
