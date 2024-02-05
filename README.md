@@ -174,6 +174,10 @@ Voici un exemple simple illustrant l'utilisation de filter() pour filtrer les no
 Dans cet exemple, la fonction de rappel passe en revue chaque élément du tableau numbers et renvoie true si l'élément est pair (c'est-à-dire s'il a un reste de 0 lorsqu'il est divisé par 2). La méthode filter() crée ensuite un nouveau tableau contenant uniquement les éléments pour lesquels la fonction de rappel retourne true.
 
 
+###
+
+Le succès de notre projet GitHub, centré sur JavaScript, HTML et CSS, repose sur l'engagement, la persévérance et la créativité de notre équipe composée de Monsieur BIRUSHA NDEGEYA, Madame Francise, Monsieur RADJABU et Monsieur Prosper. Leur collaboration étroite a permis une communication fluide et une organisation efficace. Leur détermination et flexibilité ont favorisé l'innovation et le leadership, tandis que leur adaptabilité et compétence ont nourri notre passion pour l'excellence. L'empathie et le respect ont renforcé notre esprit d'équipe, tandis que la rigueur et l'auto-discipline ont guidé nos actions vers le succès, en utilisant les méthodes map, filter et reduce.
+
 ## 
 
 Copyright BIRUSHA Francoise RADJABU Prosper 2024, Inc. Team       Privacy
