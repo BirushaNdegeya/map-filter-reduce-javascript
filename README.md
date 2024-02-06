@@ -176,6 +176,181 @@ Dans cet exemple, la fonction de rappel passe en revue chaque élément du table
       console.log('Hello world');
 ###
 
+
+## HIGHER ORDER FUNCTIONS
+
+un higher order function c'est une function qui comprend ca:
+- Il prend une ou plusieurs functions comme argument(parametres)
+- Il renvoie une fonction comme le resultat
+
+
+# ANATOMIE DE CALL BACK
+
+      const reseauxSociaux = ["Twitter", "LinkedIn", "Facebook", "instagram"];
+
+      console.log(reseauxSociaux.__proto__);
+
+# filter examples
+
+      // Filter
+
+      const mots = ["bonjour", "holla", "Bananes", "pommes", "goma"];
+
+      const motFilter = mots.filter((mot) => mot.length > 6);
+
+      console.log(motFilter);
+
+      // Avoir les nombres pairs
+
+      const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+      const nombresPairs = numbers.filter((n) => {
+      return n % 2 === 0;
+      });
+
+      console.log(nombresPairs);
+
+      // La version courte
+
+      const pairs = numbers.filter(n => n % 2 === 0);
+
+      console.log(pairs);
+
+      // La version a version avec for each
+
+      let nomPairs = [];
+
+      numbers.forEach((n) => {
+      if (n % 2 === 0) {
+            nomPairs.push(n);
+      }
+      });
+
+      console.log(nomPairs);
+
+Usines Examples
+
+      const usines = [
+      {nom: 'usine 1', category: 'Finance', debut: 1981, fin: 2004},
+      {
+            nom: 'usine 2', category: 'Vente', debut: 1992, fin: 2008,
+      },
+      {
+            nom: 'usine 3', category: 'Auto', debut: 1999, fin: 2007,
+      },
+      {
+            nom: 'usine 4', category: 'Vente', debut: 2009, fin: 2010,
+      },
+      {
+            nom: 'usine 5', category: 'Technologie', debut: 2009, fin: 2014,
+      },
+      {
+            nom: 'usine 6', category: 'Finance', debut: 1987, fin: 2010,
+      },
+      {
+            nom: 'usine 7', category: 'Auto', debut: 1986, fin: 1996,
+      },
+      {
+            nom: 'usine 8', category: 'Technologie', debut: 2011, fin: 2016,
+      },
+      {
+            nom: 'usine 9', category: 'Vente', debut: 1981, fin: 1989
+      }
+      ];
+
+      // 1. Avoir seulement les categories de vente
+
+      const usineDeVente = usines.filter(us => us.category === 'Vente');
+      console.log(usineDeVente);
+
+      // 2. Avoir seulement les usines qui ont debute en ou apres 1980 et qui ont ferme en ou avant 2005
+
+      const viellesUsines = usines.filter((us) => us.debut >= 1980 && us.fin <= 2005);
+
+      console.log(viellesUsines);
+
+      // Avoir les usines qui ont fait 10 ans ou plus
+
+      const usineLongDuree = usines.filter((us) => (us.fin - us.debut >= 10));
+
+      console.log(usineLongDuree);
+
+# avec map
+
+
+# LIEN DES DONNES
+
+- https://jsonplaceholder.typicode.com/users
+- https://jsonplaceholder.typicode.com/posts
+- https://icanhazdadjoke.com/
+
+      // workflow function
+
+      const getAllUserEmails = async () => {
+      const resp = await fetch('https://jsonplaceholder.typicode.com/users');
+      const jsonUserData = await resp.json();
+
+      const userEmailArray = jsonUserData.map((user) => {
+            return user.email;
+      });
+
+      console.log(userEmailArray);
+      }
+
+      getAllUserEmails();
+
+Autre method pour extraire les emails
+
+      const getAllUserEmails = async () => {
+      const resp = await fetch('https://jsonplaceholder.typicode.com/users');
+      const jsonUserData = await resp.json();
+
+      const userEmailArray = jsonUserData.map((user) => {
+            return user.email;
+      });
+
+      return userEmailArray;
+      }
+
+      const emails = await getAllUserEmails();
+
+      console.log(emails);
+
+D'autres examples sur les fonctions map-filter-reduce
+
+      const apiPosts = async () => {
+      const resp = await fetch('https://jsonplaceholder.typicode.com/posts');
+      return await resp.json();
+      };
+      const posts = await apiPosts();
+
+      // filtrer les post
+      // Filtrer le 100 post
+
+      const filteredPosts = posts.filter(post => {
+      return post.userId === 1;
+      });
+
+      console.log(filteredPosts);
+
+      // Mapper tous les posts
+
+      const mappedPosts = filteredPosts.map(post => {
+      return post.id * 10;
+      });
+
+      console.log(mappedPosts);
+
+      // Reduce
+
+      const reducedPosts = mappedPosts.reduce((sum, total) => {
+      return sum + total;
+      });
+
+      console.log(reducedPosts);
+
+##
+
 Le succès de notre projet GitHub, centré sur JavaScript, HTML et CSS, repose sur l'engagement, la persévérance et la créativité de notre équipe composée de Monsieur BIRUSHA NDEGEYA, Madame Francise, Monsieur RADJABU et Monsieur Prosper. Leur collaboration étroite a permis une communication fluide et une organisation efficace. Leur détermination et flexibilité ont favorisé l'innovation et le leadership, tandis que leur adaptabilité et compétence ont nourri notre passion pour l'excellence. L'empathie et le respect ont renforcé notre esprit d'équipe, tandis que la rigueur et l'auto-discipline ont guidé nos actions vers le succès, en utilisant les méthodes map, filter et reduce.
 
 ## 
